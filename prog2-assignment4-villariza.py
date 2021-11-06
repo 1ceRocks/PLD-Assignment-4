@@ -1,18 +1,19 @@
 #Rendered a welcoming greet to a user after the initialization of the program.
-print("\nWelcome to Villariza Foods! \nThe Price of an Apple is 20 PHP, while the Price of an Orange is 25 PHP.")
+print("\n\033[39m\033[1mWelcome to Villariza Foods!\033[0m \nThe Price of an\033[0m \033[91m\033[1mApple\033[0m is \033[92m\033[1m\033[1m20 PHP\033[0m. \n\033[39m\033[2mThe Price of an\033[0m \033[93m\033[1mOrange\033[0m \033[2mis\033[0m \033[92m\033[1m\033[1m25 PHP\033[0m.")
 
 #Returning Multiple Variables (User Input in a Single-Filed Function)
+#Added an additional feature in the program = Python Color Class
 def exhibit_UserPrice():
     """
     Input define function.
     """
-    apple = int(input("\nPlease quantify how many apples you need to purchase... \n> Quantity: "))
-    orange = int(input("\nPlease quantify how many oranges you need to purchase... \n> Quantity: "))
+    apple = int(input("\nPlease \033[34m\033[1mquantify\033[0m how many \033[91m\033[1mApple\033[0m\033[1m(s)\033[0m you need to purchase... \n> \033[92m\033[1mQuantity:\033[0m\033[91m\033[1m "))
+    orange = int(input("\033[0m\nPlease \033[34m\033[1mquantify\033[0m how many \033[93m\033[1mOrange\033[0m\033[1m(s)\033[0m you need to purchase... \n> \033[92m\033[1mQuantity:\033[0m\033[93m\033[1m "))
     """
     Output string with print function.
     """
     _grand_total = obtain_totalPrice(A = apple, O = orange)
-    print(f"\nThe total amount is {_grand_total:,.0f} PHP.\n")
+    print(f"\033[0m\nThe total amount is \033[92m\033[2m₱ {_grand_total:,.2f}\033[0m\n")
 
 def obtain_totalPrice(A, O):
     """
