@@ -12,16 +12,14 @@ def exhibit_UserPrice():
     """
     Output string with print function.
     """
-    _grand_total = obtain_totalPrice(A = apple, O = orange)
+    _grand_total = obtain_totalPrice(APL = apple, ORNG = orange)
     print(f"\033[0m\nThe total amount is \033[92m\033[2m₱ {_grand_total:,.2f}\033[0m\n")
 
-def obtain_totalPrice(A, O):
+def obtain_totalPrice(APL, ORNG):
     """
     Process and computation define function.
     """
-    obtain_apple = 20 * A
-    obtain_orange = 25 * O
-    total = obtain_apple + obtain_orange
+    total = (20 * APL) + (25 * ORNG)
     return total;
 
 exhibit_UserPrice()
