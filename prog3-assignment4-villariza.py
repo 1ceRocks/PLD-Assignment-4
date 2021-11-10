@@ -13,22 +13,25 @@ def extract_AMA():
 accumulated_Cash, apple_cost = extract_AMA()
 
 #Added an if-else statement concerning a systematic response based on the input of a user running a program.
-def exhibit(M, A):
+def exhibit(MNY, APL):
     """
     Process and computation define function.
     """
-    if M >=  A:
-        exchange = M % A
-        apple_maxQuantity = M // A
+    if MNY >=  APL:
+        exchange = MNY % APL
+        apple_maxQuantity = MNY // APL
         """
         Output string with print function.
         """
-        print(f"\033[0m\nYou can buy \033[34;1m{apple_maxQuantity:,.0f}\033[0m \033[91;1mApple\033[0m\033[2m(s)\033[0m and your change is \033[32;4m₱ {exchange:,.2f}\033[0m.\n")
+        if MNY // APL == 1:
+            print(f"\033[0m\nYou can buy \033[34;1m{apple_maxQuantity:,.0f}\033[0m \033[91;1mApple\033[0m and your change is \033[32;4m₱ {exchange:,.2f}\033[0m.\n")
+        else:
+            print(f"\033[0m\nYou can buy \033[34;1m{apple_maxQuantity:,.0f}\033[0m \033[91;1mApple\033[0m\033[2m(s)\033[0m and your change is \033[32;4m₱ {exchange:,.2f}\033[0m.\n")
     else:
-        moneyShortage = A - M
+        moneyShortage = APL - MNY
         """
         Output string with print function.
         """
         print(f"\033[0m\nSorry, but you \033[36mdo not have enough\033[0m \033[32;1mMoney\033[0m. \nYou need \033[32;4m₱ {moneyShortage:,.2f}\033[0m in order to \033[93mpurchase\033[0m a single \033[91;1mApple\033[0m.\n")
 
-exhibit(M = accumulated_Cash, A = apple_cost)
+exhibit(MNY = accumulated_Cash, APL = apple_cost)
